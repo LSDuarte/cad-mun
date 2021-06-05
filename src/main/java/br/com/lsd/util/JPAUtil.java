@@ -22,7 +22,7 @@ public final class JPAUtil {
 
 	public void createEntityManagerFactory() {
 		if (entityManagerFactory == null || !entityManagerFactory.isOpen()) {
-			entityManagerFactory = Persistence.createEntityManagerFactory("cad");
+			entityManagerFactory = Persistence.createEntityManagerFactory("default");
 		}
 	}
 
