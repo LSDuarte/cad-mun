@@ -36,5 +36,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Larissa Duarte/.m2/repository/org/hibernate/hibernate-core/5.4.32.Final/hibernate-entitymanager-5.4.32.Final.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
