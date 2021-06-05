@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="shortcut icon" type="image/x-icon"
+		href="#{resource['img/logo.ico']}" />
+	<h:outputStylesheet library="css" name="style.css" />
+	<title>cadmun</title>
+</h:head>
+<h:body>
+	<!-- HEADER -->
+	<div id="header" class="center">
+		<h:graphicImage id="logo" library="img" name="map.png" />
+	</div>
+
+	<!-- FORMULARIO -->
+	<div class="formulario center">
+		<h:form id="form">
+			<h:panelGrid columns="3">
+
+				<h:panelGrid styleClass="center">
+					<p:commandButton id="btn-estado" value="Estados"/>
+				</h:panelGrid>
+				
+				<h:panelGrid styleClass="center">
+					<p:commandButton id="btn-cidade" value="Cidades"/>
+				</h:panelGrid>
+				
+				<h:panelGrid styleClass="center">
+					<p:commandButton id="btn-pessoa" value="Pessoas"/>
+				</h:panelGrid>
+
+			</h:panelGrid>
+		</h:form>
+	</div>
+</h:body>
+</html>
