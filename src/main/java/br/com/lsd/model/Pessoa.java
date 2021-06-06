@@ -1,6 +1,5 @@
 package br.com.lsd.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -14,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "pessoa")
-public class Pessoa implements Serializable {
+public class Pessoa extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 

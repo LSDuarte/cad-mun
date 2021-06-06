@@ -23,16 +23,17 @@
 		<h:form id="form">
 			<h:panelGrid>
 
-				<h:panelGrid styleClass="center">
-					<p:commandButton id="btn-estado" value="Estados"/>
-				</h:panelGrid>
+				<p:outputLabel value="Id:" />
+				<p:inputText value="#{estadoBean.estado.id}" disabled="true" />
+
+				<p:outputLabel value="Estado:" />
+				<p:inputText value="#{estadoBean.estado.nome}" />
+
+				<p:outputLabel value="Sigla:" />
+				<p:inputText value="#{estadoBean.estado.sigla}" />
 				
 				<h:panelGrid styleClass="center">
-					<p:commandButton id="btn-cidade" value="Cidades"/>
-				</h:panelGrid>
-				
-				<h:panelGrid styleClass="center">
-					<p:commandButton id="btn-pessoa" value="Pessoas"/>
+					<p:commandButton id="btn-estado" value="Salvar"/>
 				</h:panelGrid>
 
 			</h:panelGrid>

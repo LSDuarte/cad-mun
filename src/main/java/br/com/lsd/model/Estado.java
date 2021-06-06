@@ -1,7 +1,5 @@
 package br.com.lsd.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "estado")
-public class Estado implements Serializable {
+public class Estado extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
@@ -47,11 +45,6 @@ public class Estado implements Serializable {
 
 	public void setSigla(String sigla) {
 		this.sigla = sigla;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		return super.equals(obj);
 	}
 
 }

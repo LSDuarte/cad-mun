@@ -1,7 +1,5 @@
 package br.com.lsd.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cidade")
-public class Cidade implements Serializable {
+public class Cidade extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
