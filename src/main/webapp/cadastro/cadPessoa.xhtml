@@ -22,18 +22,18 @@
 	<div class="formulario center">
 		<h:form id="form">
 			<h:panelGrid>
-				<h1>Cadastro de Estado</h1>
+				<h1>Cadastro de Pessoas/Endereços</h1>
 				<p:outputLabel value="Id:" />
-				<p:inputText value="#{estadoBean.estado.id}" disabled="true" />
+				<p:inputText value="#{pessoaBean.pessoa.id}" disabled="true" />
+
+				<p:outputLabel value="Cidade:" />
+				<p:inputText value="#{pessoaBean.pessoa.nome}" />
 
 				<p:outputLabel value="Estado:" />
-				<p:inputText value="#{estadoBean.estado.nome}" />
-
-				<p:outputLabel value="Sigla:" />
-				<p:inputText value="#{estadoBean.estado.sigla}" />
+				<p:inputText value="#{cidadeBean.cidade.estado.nome}" />
 				
 				<h:panelGrid styleClass="center">
-					<p:commandButton id="btn-estado" value="Salvar"/>
+					<p:commandButton id="btn-cidade" value="Salvar"/>
 				</h:panelGrid>
 
 			</h:panelGrid>
