@@ -55,6 +55,16 @@ body {
 	outline: none;
 }
 
+.btn {
+	background: none;
+	border: 2px solid #593199;
+	border-radius: 50px;
+	color: #593199;
+	height: 50px;
+	width: 250px;
+	outline: none;
+}
+
 #table {
 	width: 80%;
 	border: none;
