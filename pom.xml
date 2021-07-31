@@ -26,11 +26,6 @@
 			<artifactId>javax.faces</artifactId>
 			<version>2.2.10</version>
 			<scope>compile</scope>
-		</dependency>	
-		<dependency>
-			<groupId>org.jboss.weld.servlet</groupId>
-			<artifactId>weld-servlet</artifactId>
-			<version>2.2.0.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss</groupId>
@@ -38,6 +33,7 @@
 			<version>1.2.3.Final</version>
 			<scope>compile</scope>
 		</dependency>
+
 
 		<!-- Javax Servlet API -->
 		<dependency>
@@ -72,12 +68,6 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.3.Final</version>
 		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-c3p0</artifactId>
-			<version>5.2.4.Final</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
