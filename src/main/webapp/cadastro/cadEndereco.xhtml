@@ -22,7 +22,7 @@
 	<div class="formulario center">
 		<h:form id="form">
 			<h:panelGrid>
-				<h1>Cadastro de Pessoas/Endereços</h1>
+				<h1>Cadastro de Endereços</h1>
 				<p:outputLabel value="Id:" />
 				<p:inputText value="#{pessoaBean.pessoa.id}" disabled="true" />
 
@@ -39,10 +39,13 @@
 				<p:inputText value="#{pessoaBean.pessoa.idade}" disabled="true" />
 				
 				<p:outputLabel value="Data de nascimento:" />
-				<p:inputText type="date" value="#{pessoaBean.pessoa.dataNascimento}" />
+				<p:inputText value="#{pessoaBean.pessoa.dataNascimento}" />
 				
 				<p:outputLabel value="Sexo:" />
 				<p:inputText value="#{pessoaBean.pessoa.sexo}" />
+				
+				<p:outputLabel value="Sexo:" />
+				<p:inputText value="#{pessoaBean.pessoa.dataNascimento}" />
 				
 				<p:outputLabel value="Endereço:" />
 				<p:inputText value="#{pessoaBean.pessoa.endereco}" />

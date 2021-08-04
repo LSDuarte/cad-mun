@@ -55,7 +55,7 @@ body {
 	outline: none;
 }
 
-.btn {
+.btn  {
 	background: none;
 	border: 2px solid #593199;
 	border-radius: 50px;
@@ -63,6 +63,7 @@ body {
 	height: 50px;
 	width: 250px;
 	outline: none;
+	display: flex;
 }
 
 #table {

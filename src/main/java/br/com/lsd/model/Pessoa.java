@@ -1,5 +1,6 @@
 package br.com.lsd.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -113,6 +114,10 @@ public class Pessoa extends AbstractEntity {
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
+	}
+	
+	public Integer calcularIdade() {
+		return 10;
 	}
 
 }
