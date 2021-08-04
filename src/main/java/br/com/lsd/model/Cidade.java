@@ -16,15 +16,15 @@ public class Cidade extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "id_cidade", nullable = false)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_cidade")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(name = "nome_cidade", length = 100, nullable = false)
+	@Column(name = "nome_cidade")
 	private String nome;
 
 	@ManyToOne
-	@JoinColumn(name = "fk_estado", nullable = false)
+	@JoinColumn(name = "fk_estado")
 	private Estado estado;
 
 	public Cidade() {

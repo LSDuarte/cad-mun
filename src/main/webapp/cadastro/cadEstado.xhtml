@@ -13,6 +13,10 @@
 	<title>cadmun</title>
 </h:head>
 <h:body>
+	<h:form>
+		<p:growl autoUpdate="true" showDetail="true" escape="false"
+			life="2000" />
+	</h:form>
 	<!-- HEADER -->
 	<div id="header" class="center">
 		<h:graphicImage id="logo" library="img" name="map.png" />
@@ -23,6 +27,7 @@
 		<h:form id="form">
 			<h:panelGrid>
 				<h1>Cadastro de Estado</h1>
+
 				<p:outputLabel value="Id:" />
 				<p:inputText value="#{estadoBean.estado.id}" disabled="true" />
 
@@ -30,11 +35,11 @@
 				<p:inputText value="#{estadoBean.estado.nome}" />
 
 				<p:outputLabel value="Sigla:" />
-				<p:inputText value="#{estadoBean.estado.sigla}" />
-				
+				<p:inputText value="#{estadoBean.estado.sigla}" maxlength="2" />
+
 				<h:panelGrid styleClass="center">
-					<p:commandButton id="btn-estado" value="Salvar"/>
-					<p:commandButton id="btn-voltar" value="Voltar" onclick="/dashboard.xhtml"/>
+					<p:commandButton id="btn-estado" value="Salvar"
+						action="#{estadoBean.salvarEstado}" />
 				</h:panelGrid>
 
 			</h:panelGrid>

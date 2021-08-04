@@ -1,7 +1,6 @@
 package br.com.lsd.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,30 +18,30 @@ public class Pessoa extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_pessoa", nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_pessoa")
 	private Long id;
 
-	@Column(name = "nome", nullable = false)
+	@Column(name = "nome")
 	private String nome;
 
-	@Column(name = "sobrenome", nullable = false)
+	@Column(name = "sobrenome")
 	private String sobreNome;
 
-	@Column(name = "cpf", nullable = false)
+	@Column(name = "cpf")
 	private String cpf;
 
-	@Column(name = "idade", nullable = false)
+	@Column(name = "idade")
 	private Integer idade;
 
-	@Column(name = "data_nasc", nullable = false)
-	private Date dataNascimento;
+	@Column(name = "data_nasc")
+	private LocalDate dataNascimento;
 
-	@Column(name = "sexo", nullable = false)
+	@Column(name = "sexo")
 	private String sexo;
 
 	@ManyToOne
-	@JoinColumn(name = "fk_endereco", nullable = false)
+	@JoinColumn(name = "fk_endereco")
 	private Endereco endereco;
 
 	public Pessoa() {
@@ -92,11 +91,11 @@ public class Pessoa extends AbstractEntity {
 		this.idade = idade;
 	}
 
-	public Date getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -115,9 +114,16 @@ public class Pessoa extends AbstractEntity {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	
+
 	public Integer calcularIdade() {
-		return 10;
+		int anoAtual = (int) LocalDate.now().getYear();
+		int anoNasc = (int) this.dataNascimento.getYear();
+		return anoAtual - anoNasc;
 	}
 
+	public static void main(String[] args) {
+		Pessoa p = new Pessoa();
+		p.dataNascimento = LocalDate.of(1993, 10, 11);
+		System.out.println(p.calcularIdade());
+	}
 }

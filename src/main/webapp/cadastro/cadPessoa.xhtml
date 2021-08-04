@@ -36,7 +36,7 @@
 				<p:inputText value="#{pessoaBean.pessoa.cpf}" />
 				
 				<p:outputLabel value="Idade:" />
-				<p:inputText value="#{pessoaBean.pessoa.idade}" disabled="true" />
+				<p:inputText value="#{pessoaBean.pessoa.calcularIdade()}" disabled="true" />
 				
 				<p:outputLabel value="Data de nascimento:" />
 				<p:inputText type="date" value="#{pessoaBean.pessoa.dataNascimento}" />
@@ -48,7 +48,7 @@
 				<p:inputText value="#{pessoaBean.pessoa.endereco}" />
 				
 				<h:panelGrid styleClass="center">
-					<p:commandButton id="btn-pessoa" value="Salvar"/>
+					<p:commandButton id="btn-pessoa" value="Salvar" action="#{pessoaBean.pessoa.salvarPessoa}"/>
 				</h:panelGrid>
 
 			</h:panelGrid>

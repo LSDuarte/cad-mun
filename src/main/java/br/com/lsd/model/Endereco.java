@@ -16,24 +16,24 @@ public class Endereco extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_endereco", nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_endereco")
 	private Long id;
 
-	@Column(name = "nome_rua", nullable = false)
+	@Column(name = "nome_rua")
 	private String rua;
 
-	@Column(name = "numero", nullable = false)
+	@Column(name = "numero")
 	private Integer numero;
 
-	@Column(name = "bairro", nullable = false)
+	@Column(name = "bairro")
 	private String bairro;
 
-	@Column(name = "cep", nullable = false)
+	@Column(name = "cep")
 	private String cep;
 
 	@OneToOne
-	@JoinColumn(name = "fk_cidade", nullable = false)
+	@JoinColumn(name = "fk_cidade")
 	private Cidade cidade;
 
 	public Endereco() {
