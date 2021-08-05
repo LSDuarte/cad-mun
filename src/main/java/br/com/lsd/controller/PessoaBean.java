@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -14,6 +15,7 @@ import br.com.lsd.util.JSFUtil;
 
 @Named
 @ViewScoped
+@ManagedBean(name = "pessoaBean")
 public class PessoaBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
