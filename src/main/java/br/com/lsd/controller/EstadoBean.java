@@ -61,10 +61,6 @@ public class EstadoBean implements Serializable {
 		}
 	}
 
-	public void prepararNovo() {
-		estado = new Estado();
-	}
-
 	public Estado getEstado() {
 		return estado;
 	}
@@ -80,7 +76,7 @@ public class EstadoBean implements Serializable {
 	public void setEstados(List<Estado> estados) {
 		this.estados = estados;
 	}
-	
+
 	public void limparTela() {
 		estado = new Estado();
 	}

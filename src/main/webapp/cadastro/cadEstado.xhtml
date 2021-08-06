@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 
@@ -13,10 +14,6 @@
 	<title>cadmun</title>
 </h:head>
 <h:body>
-	<h:form>
-		<p:growl autoUpdate="true" showDetail="true" escape="false"
-			life="2000" />
-	</h:form>
 	<!-- HEADER -->
 	<div id="header" class="center">
 		<h:graphicImage id="logo" library="img" name="map.png" />
@@ -25,7 +22,8 @@
 	<!-- FORMULARIO -->
 	<div class="formulario center">
 		<h:form id="form">
-			<h:panelGrid>
+			<p:messages id="messages" autoUpdate="true"/>
+			<h:panelGrid id="plgrid">
 				<h1>Cadastro de Estado</h1>
 
 				<p:outputLabel value="Id:" />
@@ -39,7 +37,7 @@
 
 				<h:panelGrid styleClass="center">
 					<p:commandButton id="btn-estado" value="Salvar"
-						action="#{estadoBean.salvarEstado}" />
+						action="#{estadoBean.salvarEstado}" update="@form" />
 				</h:panelGrid>
 
 			</h:panelGrid>

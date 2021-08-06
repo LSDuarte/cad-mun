@@ -21,7 +21,8 @@
 	<!-- FORMULARIO -->
 	<div class="formulario center">
 		<h:form id="form">
-			<h:panelGrid>
+			<p:messages id="messages" autoUpdate="true"/>
+			<h:panelGrid id="pnGridCdd">
 				<h1>Cadastro de Cidade</h1>
 				<p:outputLabel value="Id:" />
 				<p:inputText value="#{cidadeBean.cidade.id}" disabled="true" />
@@ -30,10 +31,11 @@
 				<p:inputText value="#{cidadeBean.cidade.nome}" />
 
 				<p:outputLabel value="Estado:" />
-				<p:inputText value="#{cidadeBean.cidade.estado.nome}" />
+				<p:inputText value="#{cidadeBean.cidade.estado}" />
 				
 				<h:panelGrid styleClass="center">
-					<p:commandButton id="btn-cidade" value="Salvar"/>
+					<p:commandButton id="btn-cidade" value="Salvar" 
+								action="cidadeBean.salvarCidade" update="@form"/>
 				</h:panelGrid>
 
 			</h:panelGrid>

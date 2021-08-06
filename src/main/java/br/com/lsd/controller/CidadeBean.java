@@ -12,7 +12,7 @@ import javax.inject.Named;
 
 import br.com.lsd.dao.CidadeDao;
 import br.com.lsd.model.Cidade;
-import br.com.lsd.model.Estado;
+import br.com.lsd.util.JSFUtil;
 
 @Named
 @ViewScoped
@@ -26,7 +26,7 @@ public class CidadeBean implements Serializable {
 	@Inject
 	private CidadeDao cidadeDao;
 
-	public List<Cidade> getListarEstados() {
+	public List<Cidade> getListarCidades() {
 		return cidadeDao.listar();
 	}
 
@@ -35,6 +35,21 @@ public class CidadeBean implements Serializable {
 		this.cidade = new Cidade();
 		this.cidades = new ArrayList<Cidade>();
 		this.cidadeDao = new CidadeDao();
+	}
+
+	public void salvarCidade() {
+		try {
+			cidadeDao.save(cidade);
+			JSFUtil.adicionarMensagemSucesso("Sucesso", "Salvo com Sucesso!");
+			limparTela();
+		} catch (Exception e) {
+			e.printStackTrace();
+			JSFUtil.adicionarMensagemErro("Erro", "Erro ao realizar o cadastro!");
+		}
+	}
+
+	private void limparTela() {
+		this.cidade = new Cidade();
 	}
 
 	public Cidade getCidade() {
