@@ -46,7 +46,7 @@ public class EstadoBean implements Serializable {
 			limparTela();
 		} catch (Exception e) {
 			e.printStackTrace();
-			JSFUtil.adicionarMensagemErro("Erro", "Erro ao realizar a Inclusão!");
+			JSFUtil.adicionarMensagemErro("Erro", "Erro ao realizar o cadastro!");
 		}
 	}
 

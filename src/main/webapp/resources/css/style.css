@@ -82,3 +82,11 @@ body {
 #table tr, #table td {
 	border-color: #FFF;
 }
+
+#table_paginator_bottom {
+	color: #FFF;
+	background: #593199;
+	text-shadow: none;
+	height: 30px;
+	box-shadow: none;
+}

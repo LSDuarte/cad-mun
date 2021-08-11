@@ -37,11 +37,23 @@
 
 				<h:panelGrid styleClass="center">
 					<p:commandButton id="btn-estado" value="Salvar"
-						action="#{estadoBean.salvarEstado}" update="@form" />
+						action="#{estadoBean.salvarEstado}" update="@form table" />
 				</h:panelGrid>
 
 			</h:panelGrid>
 		</h:form>
 	</div>
+	<!-- TABELA -->
+	<h:panelGroup styleClass="center">
+		<p:dataTable id="table" value="#{estadoBean.listarEstados}" var="e"
+			emptyMessage="Nenhum Registro Encontrado." paginator="true" rows="4"
+			paginatorPosition="bottom" rowsPerPageTemplate="5,10,15,20"
+			paginatorAlwaysVisible="false">
+			
+			<p:column headerText="Id">#{e.id}</p:column>
+			<p:column headerText="Nome">#{e.nome}</p:column>
+			<p:column headerText="Sigla">#{e.sigla}</p:column>
+		</p:dataTable>
+	</h:panelGroup>
 </h:body>
 </html>

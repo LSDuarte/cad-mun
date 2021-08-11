@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
@@ -21,12 +22,19 @@ public class PessoaBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Pessoa pessoa;
+	private List<Pessoa> pessoas = new ArrayList<>();
 	@Inject
 	private PessoaDao pessoaDao;
-	private List<Pessoa> pessoas = new ArrayList<>();
 
 	public List<Pessoa> getListarPessoas() {
 		return new PessoaDao().listar();
+	}
+
+	@PostConstruct
+	public void init() {
+		this.pessoa = new Pessoa();
+		this.pessoaDao = new PessoaDao();
+		this.pessoas = new ArrayList<Pessoa>();
 	}
 
 	public Pessoa getPessoa() {
@@ -39,15 +47,20 @@ public class PessoaBean implements Serializable {
 			try {
 				pessoaDao.save(pessoa);
 				JSFUtil.adicionarMensagemSucesso("Sucesso.", this.pessoa.getNome() + " salvo com sucesso!");
+				limparTela();
 			} catch (Exception e) {
 				e.printStackTrace();
 				JSFUtil.adicionarMensagemErro("Erro.", "Erro ao tentar salvar " + this.pessoa.getNome());
 			}
 		}
 	}
-	
+
+	private void limparTela() {
+		this.pessoa = new Pessoa();
+	}
+
 	public void deletarPessoa(Long id) {
-		
+
 	}
 
 	public void setPessoa(Pessoa pessoa) {
