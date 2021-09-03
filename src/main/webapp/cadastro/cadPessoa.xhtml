@@ -54,5 +54,21 @@
 			</h:panelGrid>
 		</h:form>
 	</div>
+	<!-- TABELA -->
+	<h:panelGroup styleClass="center">
+		<p:dataTable id="table" value="#{pessoaBean.listarPessoas}" var="e"
+			emptyMessage="Nenhum Registro Encontrado." paginator="true" rows="4"
+			paginatorPosition="bottom" rowsPerPageTemplate="5,10,15,20"
+			paginatorAlwaysVisible="false">
+			
+			<p:column headerText="Id">#{e.id}</p:column>
+			<p:column headerText="Nome">#{e.nomeCompleto()}</p:column>
+			<p:column headerText="CPF">#{e.cpf}</p:column>
+			<p:column headerText="Idade">#{e.idade}</p:column>
+			<p:column headerText="Data Nascimento">#{e.dataNascimento}</p:column>
+			<p:column headerText="Sexo">#{e.sexo}</p:column>
+			<p:column headerText="Endereço">#{e.endereco.enderecoCompleto()}</p:column>
+		</p:dataTable>
+	</h:panelGroup>
 </h:body>
 </html>

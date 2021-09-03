@@ -24,38 +24,43 @@
 			<h:panelGrid>
 				<h1>Cadastro de Endereços</h1>
 				<p:outputLabel value="Id:" />
-				<p:inputText value="#{pessoaBean.pessoa.id}" disabled="true" />
+				<p:inputText value="#{enderecoBean.endereco.id}" />
 
-				<p:outputLabel value="Nome:" />
-				<p:inputText value="#{pessoaBean.pessoa.nome}" />
+				<p:outputLabel value="Rua:" />
+				<p:inputText value="#{enderecoBean.endereco.rua}" />
 
-				<p:outputLabel value="Sobrenome:" />
-				<p:inputText value="#{pessoaBean.pessoa.sobreNome}" />
+				<p:outputLabel value="Nº:" />
+				<p:inputText value="#{enderecoBean.endereco.numero}" />
 				
-				<p:outputLabel value="CPF:" />
-				<p:inputText value="#{pessoaBean.pessoa.cpf}" />
+				<p:outputLabel value="Bairro:" />
+				<p:inputText value="#{enderecoBean.endereco.bairro}" />
 				
-				<p:outputLabel value="Idade:" />
-				<p:inputText value="#{pessoaBean.pessoa.idade}" disabled="true" />
+				<p:outputLabel value="CEP:" />
+				<p:inputText value="#{enderecoBean.endereco.cep}" />
 				
-				<p:outputLabel value="Data de nascimento:" />
-				<p:inputText value="#{pessoaBean.pessoa.dataNascimento}" />
-				
-				<p:outputLabel value="Sexo:" />
-				<p:inputText value="#{pessoaBean.pessoa.sexo}" />
-				
-				<p:outputLabel value="Sexo:" />
-				<p:inputText value="#{pessoaBean.pessoa.dataNascimento}" />
-				
-				<p:outputLabel value="Endereço:" />
-				<p:inputText value="#{pessoaBean.pessoa.endereco}" />
+				<p:outputLabel value="Cidade:" />
+				<p:inputText value="#{enderecoBean.endereco.cidade}" />
 				
 				<h:panelGrid styleClass="center">
-					<p:commandButton id="btn-pessoa" value="Salvar"/>
+					<p:commandButton id="btn-endereco" value="Salvar"/>
 				</h:panelGrid>
 
 			</h:panelGrid>
 		</h:form>
 	</div>
+	<!-- TABELA -->
+	<h:panelGroup styleClass="center">
+		<p:dataTable id="table" value="#{enderecoBean.listarEnderecos}" var="e"
+			emptyMessage="Nenhum Registro Encontrado." paginator="true" rows="4"
+			paginatorPosition="bottom" rowsPerPageTemplate="5,10,15,20"
+			paginatorAlwaysVisible="false">
+			
+			<p:column headerText="Id">#{e.id}</p:column>
+			<p:column headerText="Rua">#{e.rua}</p:column>
+			<p:column headerText="Número">#{e.numero}</p:column>
+			<p:column headerText="CEP">#{e.cep}</p:column>
+			<p:column headerText="Cidade">#{e.cidade.nome}</p:column>
+		</p:dataTable>
+	</h:panelGroup>
 </h:body>
 </html>

@@ -90,5 +90,10 @@ public class Endereco extends AbstractEntity {
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
+	
+	public String enderecoCompleto() {
+		return "Rua: " + this.rua + ", Nº" + this.numero + ",\nBairro: "
+				+ this.bairro + ", CEP: " + this.cep;
+	}
 
 }

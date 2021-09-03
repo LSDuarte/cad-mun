@@ -32,6 +32,10 @@ public class EnderecoBean implements Serializable {
 		this.enderecos = new ArrayList<Endereco>();
 		this.enderecoDao = new EnderecoDao();
 	}
+	
+	public List<Endereco> getListarEnderecos() {
+		return enderecoDao.listar();
+	}
 
 	public void salvarEndereco() {
 		try {

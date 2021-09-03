@@ -41,5 +41,17 @@
 			</h:panelGrid>
 		</h:form>
 	</div>
+	<!-- TABELA -->
+	<h:panelGroup styleClass="center">
+		<p:dataTable id="table" value="#{cidadeBean.listarCidades}" var="e"
+			emptyMessage="Nenhum Registro Encontrado." paginator="true" rows="4"
+			paginatorPosition="bottom" rowsPerPageTemplate="5,10,15,20"
+			paginatorAlwaysVisible="false">
+			
+			<p:column headerText="Id">#{e.id}</p:column>
+			<p:column headerText="Cidade">#{e.nome}</p:column>
+			<p:column headerText="Estado">#{e.estado.nome}</p:column>
+		</p:dataTable>
+	</h:panelGroup>
 </h:body>
 </html>

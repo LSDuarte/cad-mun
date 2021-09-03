@@ -120,6 +120,10 @@ public class Pessoa extends AbstractEntity {
 		int anoNasc = (int) this.dataNascimento.getYear();
 		return anoAtual - anoNasc;
 	}
+	
+	public String nomeCompleto() {
+		return this.nome + " " + this.sobreNome;
+	}
 
 	public static void main(String[] args) {
 		Pessoa p = new Pessoa();
